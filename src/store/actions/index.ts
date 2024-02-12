@@ -1,0 +1,1 @@
+export { resetState, updateDetailsState, searchTerm, getDetails, getHomeworld, getFilmsNames } from './details';
