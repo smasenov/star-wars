@@ -4,28 +4,16 @@ import { useParams } from 'react-router-dom';
 import { Card, CardContent, Table, TableBody, TableRow, TableCell, CardHeader, Divider } from '@mui/material';
 import { isObject } from '../../shared/utility';
 
-type getDetails = {
-	data: any;
-	loading: boolean;
-	error: string | null;
-}
-
-type getHomeworld = {
-	data: any;
-	loading: boolean;
-	error: string | null;
-}
-
-type getFilmsNames = {
+interface DataResponse {
 	data: any;
 	loading: boolean;
 	error: string | null;
 }
 
 type ExtraInformationProps = {
-	getDetails: getDetails,
-	getHomeworld: getHomeworld,
-	getFilmsNames: getFilmsNames
+	getDetails: DataResponse;
+	getHomeworld: DataResponse;
+	getFilmsNames: DataResponse;
 }
 
 const ExtraInformation: React.FC<ExtraInformationProps> = (props) => {

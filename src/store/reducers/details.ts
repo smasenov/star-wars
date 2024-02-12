@@ -7,7 +7,7 @@ import {
 // Define the initial state
 interface StateObject {
 	[key: string]: {
-		data: any; // Adjust the type according to your data type
+		data: {} | null; // Adjust the type according to your data type
 		loading: boolean;
 		error: any; // Adjust the type according to your error type
 	};

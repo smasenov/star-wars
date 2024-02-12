@@ -20,7 +20,7 @@ export interface FetchDetailsStartAction extends BaseAction {
 export interface FetchDetailsSuccessAction extends BaseAction {
 	type: typeof FETCH_DETAILS_SUCCESS;
 	identifier: string;
-	data: any; // Adjust the type according to your data type
+	data: {} | null; // Adjust the type according to your data type
 }
 
 export interface FetchDetailsFailAction extends BaseAction {

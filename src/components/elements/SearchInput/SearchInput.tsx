@@ -56,7 +56,7 @@ const SearchInput: React.FC<SearchInputProps> = (props) => {
 			onSearchTerm(searchValue, queryName)
 		}
 	}, [searchValue, onSearchTerm])
-	console.log('searchTermData', searchTermData);
+
 	useEffect(() => {
 		if (searchTermData?.results) {
 			setOptions(searchTermData?.results.map((result: Result) => {
@@ -82,11 +82,11 @@ const SearchInput: React.FC<SearchInputProps> = (props) => {
 		const { value } = event.target;
 		debouncedHandleValue(value);
 	};
-	console.log('queryName', queryName);
+
 	const handleGetOptionLabel = (option: Option) => option.name;
 
 	const onChange = (event: ChangeEvent<{}>, values: any) => {
-		// console.log('values', values)
+
 		const num = values?.url && extractNumberFromUrl(values?.url)
 
 		const updateQuery = queryName === 'all' ? extractResourceTypeFromUrl(values.url) : queryName;
