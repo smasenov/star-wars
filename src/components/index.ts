@@ -1,1 +1,1 @@
-export { Page, Header, SearchInput, CheckboxInput } from './elements';
+export { Page, Header, SearchInput, RadioInput } from './elements';

@@ -1,4 +1,4 @@
-import { Page, SearchInput, CheckboxInput } from './components';
+import { Page, SearchInput, RadioInput } from './components';
 import { Stack, Typography } from '@mui/material';
 import { useArray } from './shared/hooks';
 
@@ -33,7 +33,7 @@ const App = () => {
       <Stack direction='column' sx={{ alignItems: 'center' }} gap={2}>
         <Typography variant='h2'>{'Star Wars'}</Typography>
         <SearchInput queryName={selectedQuery?.name && selectedQuery?.name ? selectedQuery.name : ''} />
-        <CheckboxInput onChange={handleChange} checkList={checkList.array} />
+        <RadioInput onChange={handleChange} checkList={checkList.array} />
       </Stack>
     </Page >
   );

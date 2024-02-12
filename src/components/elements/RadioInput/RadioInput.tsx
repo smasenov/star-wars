@@ -1,4 +1,4 @@
-import { Checkbox, FormControlLabel, FormGroup } from '@mui/material';
+import { Radio, FormControlLabel, FormControl } from '@mui/material';
 import { capitalize } from '../../../shared/utility';
 
 type ListItem = {
@@ -7,21 +7,21 @@ type ListItem = {
 	checked: boolean;
 }
 
-type CheckboxInputProps = {
+type RadioInputProps = {
 	checkList: ListItem[];
 	onChange: (id: string) => (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-const CheckboxInput: React.FC<CheckboxInputProps> = ({ checkList, onChange }) => {
+const RadioInput: React.FC<RadioInputProps> = ({ checkList, onChange }) => {
 
 	return (
-		<FormGroup sx={{ alignSelf: 'flex-start' }}>
+		<FormControl sx={{ alignSelf: 'flex-start' }}>
 			{checkList.map(list => (
 				<FormControlLabel
 					key={list.id}
 					label={capitalize(list.name)}
 					control={
-						<Checkbox
+						<Radio
 							checked={list.checked}
 							onChange={onChange(list.id)}
 							inputProps={{ 'aria-label': 'controlled' }}
@@ -29,8 +29,8 @@ const CheckboxInput: React.FC<CheckboxInputProps> = ({ checkList, onChange }) =>
 					}
 				/>
 			))}
-		</FormGroup>
+		</FormControl>
 	);
 }
 
-export default CheckboxInput;
+export default RadioInput;
